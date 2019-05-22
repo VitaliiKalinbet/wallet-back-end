@@ -17,7 +17,9 @@ const dbUrl = require("../../../config/config").MondoDB.url;
 
 // Connect to MongoDB
 mongoose
-  .connect(dbUrl, { useNewUrlParser: true })
+  .connect(dbUrl, {
+    useNewUrlParser: true
+  })
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
@@ -28,7 +30,9 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // Express body parser
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+  extended: true
+}));
 
 // Express session
 app.use(
@@ -47,14 +51,14 @@ app.use(passport.session());
 app.use(flash());
 
 // Global variables
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.locals.success_msg = req.flash("success_msg");
   res.locals.error_msg = req.flash("error_msg");
   res.locals.error = req.flash("error");
   next();
 });
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
