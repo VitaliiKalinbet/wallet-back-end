@@ -1,2 +1,2 @@
-# rashchitalo4ka-back-end
-Back-end for Rashchitalochka App
+# wallet-back-end-back-end
+Back-end for wallet-back-end App
