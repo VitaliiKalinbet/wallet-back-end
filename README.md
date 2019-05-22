@@ -1,2 +1,2 @@
 # wallet-back-end
-Back-end for wallet-back-end App
+Back-end for Wallet App
